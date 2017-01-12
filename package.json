@@ -1,5 +1,5 @@
 {
-  "name": "minimal-react-redux-webpack-example",
+  "name": "learn-from-os-projects",
   "version": "1.0.0",
   "description": "",
   "main": "",
@@ -8,10 +8,12 @@
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
+    "react-router": "^3.0.0",
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^4.2.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "semantic-ui-react": "^0.63.6"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
