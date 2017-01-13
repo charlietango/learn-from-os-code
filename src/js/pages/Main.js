@@ -25,9 +25,9 @@ export default class Main extends React.Component {
   render() {
     const { fetching, fetched, projects } = this.props;
 
-    const mappedProjects = projects.map(project => <Project projectName={project.name}
-      creationDate={project.date} projectDescription={project.description} forks={project.forks}
-      star={project.start} url={project.url} user={project.user}></Project>);
+    const mappedProjects = projects.map(project => <Project key={project.id} projectName={project.full_name}
+      creationDate={project.created_at} projectDescription={project.description} forks={project.forks}
+      stars={project.stargazers_count} url={project.clone_url} user={"@" + project.owner.login}></Project>);
 
     return(
       <div class="ui container">

@@ -1,11 +1,12 @@
-import { applyMiddleware, createStore } from "redux"
+import { applyMiddleware, createStore } from "redux";
 
-import logger from "redux-logger"
-import thunk from "redux-thunk"
-import promise from "redux-promise-middleware"
+import createDebounce from "redux-debounce";
+import logger from "redux-logger";
+import promise from "redux-promise-middleware";
+import thunk from "redux-thunk";
 
-import reducer from "./reducers/projectsReducer"
+import reducer from "./reducers/projectsReducer";
 
-const middleware = applyMiddleware(promise(), thunk, logger())
+const middleware = applyMiddleware(createDebounce({ simple: 300 }) ,promise(), thunk, logger());
 
-export default createStore(reducer, middleware)
+export default createStore(reducer, middleware);
