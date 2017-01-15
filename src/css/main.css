@@ -5,3 +5,12 @@
 #searchbox {
   width: 100%;
 }
+
+#results-div {
+  margin-top: 3%;
+}
+
+.active {
+  background-color: yellow;
+  color: black;
+}

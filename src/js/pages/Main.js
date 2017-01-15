@@ -1,29 +1,33 @@
 import React from "react";
 import { connect } from "react-redux"
-import { Input, Button, Icon } from "semantic-ui-react";
+import { Input, Button, Icon, Loader, Container } from "semantic-ui-react";
 
 import Project from "../components/Project";
-import { fetchProjects } from "../actions/projectsActions";
+import { fetchProjects, hideProjects } from "../actions/projectsActions";
 
 @connect((store) => {
   console.log("Connected to the store", store);
   return {
     fetching: store.fetching,
-    fetched: store.fetched,
     error: store.error,
     projects: store.projects,
+    showResults: store.showResults,
   };
 })
 export default class Main extends React.Component {
 
   handleChange(event) {
     const technology = event.target.value;
-    console.log("Fetching projects: ", technology);
-    this.props.dispatch(fetchProjects(technology));
+    if (technology != "") {
+      console.log("Fetching projects: ", technology);
+      this.props.dispatch(fetchProjects(technology));
+    } else {
+      this.props.dispatch(hideProjects());
+    }
   }
 
   render() {
-    const { fetching, fetched, projects } = this.props;
+    const { fetching, fetched, projects, showResults } = this.props;
 
     const mappedProjects = projects.map(project => <Project key={project.id} projectName={project.full_name}
       creationDate={project.created_at} projectDescription={project.description} forks={project.forks}
@@ -36,7 +40,12 @@ export default class Main extends React.Component {
           <Input id="searchbox" class="ui center aligned header"
             placeholder='Awesome technology you want to learn'
             onChange={this.handleChange.bind(this)}></Input>
-          {mappedProjects}
+        </div>
+        <div id="loader-div">
+          <Loader size="huge" active={fetching ? true : false}>Fetching some awesome projects.</Loader>
+        </div>
+        <div id="results-div" ref="results">
+          {showResults ? mappedProjects : null}
         </div>
       </div>
     );

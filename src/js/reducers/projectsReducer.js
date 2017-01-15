@@ -1,13 +1,12 @@
 export default function reducer(state={
     projects: [],
     fetching: false,
-    fetched: false,
     error: null,
+    showResults: false,
   }, action) {
-
+  console.log("a intrat in reducer");
   switch(action.type) {
     case "FETCH_PROJECTS_STARTED": {
-      console.log("Fetch projects started");
       return {...state, fetching: true};
     }
     case "FETCH_PROJECTS_REJECTED": {
@@ -17,8 +16,15 @@ export default function reducer(state={
       return {
         ...state,
         fetching: false,
-        fetched: true,
+        showResults: true,
         projects: action.payload,
+      }
+    }
+    case "HIDE_PROJECTS": {
+      return {
+        ...state,
+        showResults: false,
+        projects: [],
       }
     }
   }
