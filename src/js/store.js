@@ -7,6 +7,6 @@ import thunk from "redux-thunk";
 
 import reducer from "./reducers/projectsReducer";
 
-const middleware = applyMiddleware(createDebounce({ simple: 300 }) ,promise(), thunk, logger());
+const middleware = applyMiddleware(createDebounce({ simple: 500 }), promise(), thunk, logger());
 
 export default createStore(reducer, middleware);

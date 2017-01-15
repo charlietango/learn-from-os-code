@@ -7,11 +7,11 @@ export default class Header extends React.Component {
     return (
       <Menu secondary>
         <Menu.Menu position="right">
-          <Menu.Item name="home">
-            <IndexLink to="/">Home</IndexLink>
+          <Menu.Item>
+            <IndexLink to="/" activeClassName="active">Home</IndexLink>
           </Menu.Item>
-          <Menu.Item name="about">
-            <Link to="about">About</Link>
+          <Menu.Item>
+            <Link to="about" activeClassName="active">About</Link>
           </Menu.Item>
         </Menu.Menu>
       </Menu>

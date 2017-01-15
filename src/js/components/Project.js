@@ -27,10 +27,12 @@ export default class Layout extends React.Component {
             <Icon name='star' />
             {this.props.stars}
           </a>
-          <a class="right floated" href={this.props.url}>
-            <span>{this.props.user} </span>
-            <Icon name='external'></Icon>
-          </a>
+          <div class="right floated">
+            <span>owner: {this.props.user}</span>
+            <a target="_blank" href={this.props.url}>
+              <Icon name='external'></Icon>
+            </a>
+          </div>
         </Card.Content>
       </Card>
     );
