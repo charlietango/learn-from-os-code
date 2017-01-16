@@ -1,10 +1,10 @@
 import React from "react";
-import { Card, Icon } from "semantic-ui-react";
+import { Card, Icon, Button } from "semantic-ui-react";
 
 export default class Layout extends React.Component {
   render() {
     return(
-      <Card fluid>
+      <Card fluid color="green">
         <Card.Content>
           <Card.Header>
             {this.props.projectName}
@@ -29,9 +29,10 @@ export default class Layout extends React.Component {
           </a>
           <div class="right floated">
             <span>owner: {this.props.user}</span>
-            <a target="_blank" href={this.props.url}>
-              <Icon name='external'></Icon>
-            </a>
+          <Button class="github-button" color="green" inverted size="tiny" target="_blank" href={this.props.url}>
+              Go to
+              <Icon class="github-icon" name="github" />
+            </Button>
           </div>
         </Card.Content>
       </Card>

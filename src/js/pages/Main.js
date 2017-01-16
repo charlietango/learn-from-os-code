@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { Input, Button, Icon, Loader, Container } from "semantic-ui-react";
 
 import Project from "../components/Project";
+import EndOfList from "../components/EndOfList";
 import { fetchProjects, hideProjects } from "../actions/projectsActions";
 
 @connect((store) => {
@@ -35,18 +36,19 @@ export default class Main extends React.Component {
 
     return(
       <div class="ui container">
-        <h1 class="ui center aligned header">I want to learn:</h1>
+        <h1 id="title" class="ui center aligned header">I want to learn:</h1>
         <div id="searchbox-div">
           <Input id="searchbox" class="ui center aligned header"
-            placeholder='Awesome technology you want to learn'
+            placeholder='awesome technology you want to learn'
             onChange={this.handleChange.bind(this)}></Input>
         </div>
         <div id="loader-div">
-          <Loader size="huge" active={fetching ? true : false}>Fetching some awesome projects.</Loader>
+          <Loader size="massive" active={fetching ? true : false}>Fetching some awesome projects.</Loader>
         </div>
         <div id="results-div" ref="results">
           {showResults ? mappedProjects : null}
         </div>
+        {showResults ? <EndOfList /> : null}
       </div>
     );
   }

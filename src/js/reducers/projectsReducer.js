@@ -4,7 +4,6 @@ export default function reducer(state={
     error: null,
     showResults: false,
   }, action) {
-  console.log("a intrat in reducer");
   switch(action.type) {
     case "FETCH_PROJECTS_STARTED": {
       return {...state, fetching: true};
