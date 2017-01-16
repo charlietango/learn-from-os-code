@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function fetchProjects(technology) {
   return function(dispatch) {
-    var uri = `https://api.github.com/search/repositories?q=learn+${technology}+in:description,name,readme`
+    var uri = `https://api.github.com/search/repositories?q=learn+${technology}+in:description,name,readme&per_page=25`
     axios.get(uri)
     .then((response) => {
       dispatch({type: "FETCH_PROJECTS_STARTED"});

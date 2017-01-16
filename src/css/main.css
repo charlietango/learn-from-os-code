@@ -1,3 +1,32 @@
+/*body {
+  background-color: #248232;
+}
+
+#navbar {
+  background-color: #092323;
+}
+
+.item {
+  padding: 0px !important;
+  margin: 0px !important;
+  height: 100%;
+}*/
+
+a {
+  color: #092323;
+  height: 100%;
+}
+
+a:hover {
+  color: green;
+}
+
+#title {
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-size: 4em;
+}
+
 #searchbox-div {
   width: 100%;
 }
@@ -10,7 +39,20 @@
   margin-top: 3%;
 }
 
-.active {
-  background-color: yellow;
-  color: black;
+.active-menu-item {
+  color: green;
+  height: 100%;
+}
+
+#endOfList {
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.github-icon {
+  margin-left: 5px !important;
+}
+
+.github-button {
+  margin-left: 10px !important;
 }
