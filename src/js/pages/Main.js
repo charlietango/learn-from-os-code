@@ -32,15 +32,15 @@ export default class Main extends React.Component {
 
     const mappedProjects = projects.map(project => <Project key={project.id} projectName={project.full_name}
       creationDate={project.created_at} projectDescription={project.description} forks={project.forks}
-      stars={project.stargazers_count} url={project.clone_url} user={"@" + project.owner.login}></Project>);
+      stars={project.stargazers_count} url={project.clone_url} user={`@${project.owner.login}`}></Project>);
 
     return(
       <div class="ui container">
-        <h1 id="title" class="ui center aligned header">I want to learn:</h1>
+        <h1 class="ui center aligned header page-title">I want to learn:</h1>
         <div id="searchbox-div">
           <Input id="searchbox" class="ui center aligned header"
-            placeholder='awesome technology you want to learn'
-            onChange={this.handleChange.bind(this)}></Input>
+            placeholder='type in some awesome technology you want to learn'
+            onChange={this.handleChange.bind(this)} />
         </div>
         <div id="loader-div">
           <Loader size="massive" active={fetching ? true : false}>Fetching some awesome projects.</Loader>

@@ -1,0 +1,26 @@
+// colors
+$light_green: #2ECC40;
+$black: #000;
+$white: #fff;
+
+a {
+  color: $white;
+  height: 100%;
+  &:hover {
+    color: $light_green;
+  }
+}
+
+#navbar {
+  background-color: $black;
+}
+
+#site-name {
+  color: $white;
+}
+
+.active-menu-item {
+  color: $light_green;
+  height: 100%;
+  border-bottom: 10px;
+}

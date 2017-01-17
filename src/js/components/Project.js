@@ -1,6 +1,9 @@
 import React from "react";
 import { Card, Icon, Button } from "semantic-ui-react";
 
+import style from "../../styles/project.scss";
+
+
 export default class Layout extends React.Component {
   render() {
     return(
@@ -11,19 +14,19 @@ export default class Layout extends React.Component {
           </Card.Header>
           <Card.Meta>
             <span className='date'>
-              {this.props.creationDate}
+              {`Repo created in ${this.props.creationDate.split("-")[0]}`}
             </span>
           </Card.Meta>
           <Card.Description>
-            {this.props.projectDescription}
+            {`Description: ${this.props.projectDescription}`}
           </Card.Description>
         </Card.Content>
         <Card.Content extra>
-          <a>
+          <a href={this.props.url} target="_blank">
             <Icon name='fork' />
             {this.props.forks}
           </a>
-          <a>
+          <a id="stars" href={this.props.url} target="_blank">
             <Icon name='star' />
             {this.props.stars}
           </a>
