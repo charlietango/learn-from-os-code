@@ -3,7 +3,7 @@ import { connect } from "react-redux"
 import { Input, Button, Icon, Loader, Container } from "semantic-ui-react";
 
 import Project from "../components/Project";
-import EndOfList from "../components/EndOfList";
+import Message from "../components/Message";
 import { fetchProjects, hideProjects } from "../actions/projectsActions";
 
 @connect((store) => {
@@ -28,12 +28,14 @@ export default class Main extends React.Component {
   }
 
   render() {
-    const { fetching, fetched, projects, showResults } = this.props;
+    const { fetching, fetched, projects, showResults, error } = this.props;
 
     const mappedProjects = projects.map(project => <Project key={project.id} projectName={project.full_name}
       creationDate={project.created_at} projectDescription={project.description} forks={project.forks}
       stars={project.stargazers_count} url={project.clone_url} user={`@${project.owner.login}`}></Project>);
 
+    const defaultContent = "We did our best to provide the most meaningful 25 projects. We hope you found some projects to help and inspire you.";
+    const errorContent = "Oh snap! Something bad happened. Please refresh. If it's still not working, try again in a minute. :)";
     return(
       <div class="ui container">
         <h1 class="ui center aligned header page-title">I want to learn:</h1>
@@ -48,7 +50,8 @@ export default class Main extends React.Component {
         <div id="results-div" ref="results">
           {showResults ? mappedProjects : null}
         </div>
-        {showResults ? <EndOfList /> : null}
+        {showResults ? <Message content={defaultContent} /> : null}
+        {error ? <Message content={errorContent} /> : null }
       </div>
     );
   }

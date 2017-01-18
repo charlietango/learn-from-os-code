@@ -34,6 +34,7 @@ export default class About extends React.Component {
             <List.Item as='li'>work with React and Redux concepts</List.Item>
             <List.Item as='li'>debounce multiple function calls</List.Item>
             <List.Item as='li'>work with SemanticUI</List.Item>
+            <List.Item as='li'>write tests using Mocha, Enzyme and Chai</List.Item>
           </List>
           <p>
             The source code of the app is hosted on <a class="external-link" target="_blank" href="https://github.com/charlietango592/learn-from-os-code">GitHub</a>.
