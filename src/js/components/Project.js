@@ -6,6 +6,7 @@ import style from "../../styles/project.scss";
 
 export default class Layout extends React.Component {
   render() {
+    const year = this.props.creationDate ? this.props.creationDate.split("-")[0] : "";
     return(
       <Card fluid color="green">
         <Card.Content>
@@ -14,7 +15,7 @@ export default class Layout extends React.Component {
           </Card.Header>
           <Card.Meta>
             <span className='date'>
-              {`Repo created in ${this.props.creationDate.split("-")[0]}`}
+              {`Repo created in ${year}`}
             </span>
           </Card.Meta>
           <Card.Description>
