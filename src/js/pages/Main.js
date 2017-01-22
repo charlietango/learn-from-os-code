@@ -16,6 +16,10 @@ import { fetchProjects, hideProjects } from "../actions/projectsActions";
   };
 })
 export default class Main extends React.Component {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 335a9c57906a74fc159c13a8af0d4d05e4841216
   handleChange(event) {
     const technology = event.target.value;
     if (technology != "") {
