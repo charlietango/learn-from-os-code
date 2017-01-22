@@ -16,7 +16,6 @@ import { fetchProjects, hideProjects } from "../actions/projectsActions";
   };
 })
 export default class Main extends React.Component {
-
   handleChange(event) {
     const technology = event.target.value;
     if (technology != "") {
@@ -39,11 +38,9 @@ export default class Main extends React.Component {
     return(
       <div class="ui container">
         <h1 class="ui center aligned header page-title">I want to learn:</h1>
-        <div id="searchbox-div">
-          <Input id="searchbox" class="ui center aligned header"
-            placeholder='type in some awesome technology you want to learn'
-            onChange={this.handleChange.bind(this)} />
-        </div>
+        <Input id="searchbox" class="ui center aligned header"
+          placeholder='type in some awesome technology you want to learn'
+          onChange={this.handleChange.bind(this)} />
         <div id="loader-div">
           <Loader size="massive" active={fetching ? true : false}>Fetching some awesome projects.</Loader>
         </div>
@@ -51,7 +48,7 @@ export default class Main extends React.Component {
           {showResults ? mappedProjects : null}
         </div>
         {showResults ? <Message content={defaultContent} /> : null}
-        {error ? <Message content={errorContent} /> : null }
+        {error ? <Message content={errorContent} /> : null}
       </div>
     );
   }
