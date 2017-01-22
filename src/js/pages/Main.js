@@ -16,10 +16,6 @@ import { fetchProjects, hideProjects } from "../actions/projectsActions";
   };
 })
 export default class Main extends React.Component {
-<<<<<<< HEAD
-=======
-
->>>>>>> 335a9c57906a74fc159c13a8af0d4d05e4841216
   handleChange(event) {
     const technology = event.target.value;
     if (technology != "") {
@@ -40,7 +36,7 @@ export default class Main extends React.Component {
     const defaultContent = "We did our best to provide the most meaningful 25 projects. We hope you found some projects to help and inspire you.";
     const errorContent = "Oh snap! Something bad happened. Please refresh. If it's still not working, try again in a minute. :)";
     return(
-      <div class="ui container">
+      <Container>
         <h1 class="ui center aligned header page-title">I want to learn:</h1>
         <Input id="searchbox" class="ui center aligned header"
           placeholder='type in some awesome technology you want to learn'
@@ -53,7 +49,7 @@ export default class Main extends React.Component {
         </div>
         {showResults ? <Message content={defaultContent} /> : null}
         {error ? <Message content={errorContent} /> : null}
-      </div>
+      </Container>
     );
   }
 }
