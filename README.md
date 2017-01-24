@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/charlietango592/learn-from-os-code.svg?branch=master)](https://travis-ci.org/charlietango592/learn-from-os-code)
+
 # Learn From OpenSource Code
 This project is just a playground for learning web technologies like React, Redux and Webpack.
 
